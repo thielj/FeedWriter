@@ -653,6 +653,10 @@ abstract class Feed
     {
         $out = '<?xml version="1.0" encoding="'.$this->encoding.'" ?>' . PHP_EOL;
 
+        // site specific hack, there should be away to to add custom headers
+        $out .= '<?xml-stylesheet type="text/css" href="/stylesheet/feed.css" ?>' . PHP_EOL .
+                '<?xml-stylesheet type="text/xsl" href="/stylesheet/feed.xsl" ?>' . PHP_EOL;
+
         $prefixes = $this->getNamespacePrefixes();
         $attributes = array();
         $tagName = '';
